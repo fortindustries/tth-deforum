@@ -73,7 +73,7 @@ def install_requirements():
 
     # Xformers install
     linux_xformers = [
-        "triton==2.0.0.dev20221202",
+        "triton==2.0.0.post1",
         "xformers==0.0.16rc424",
     ]
 
