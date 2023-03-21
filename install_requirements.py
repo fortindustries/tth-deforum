@@ -50,7 +50,7 @@ def install_requirements():
         "omegaconf",
         "opencv-python",
         "pandas",
-        "pytorch_lightning==1.7.7",
+        "pytorch_lightning==2.0.0",
         "resize-right",
         "scikit-image",
         "scikit-learn",
