@@ -50,7 +50,7 @@ def setup_environment():
         import torch
         
         all_process = [
-            ['pip', 'install', 'omegaconf', 'einops==0.4.1', 'pytorch-lightning==2.0.0', 'torchmetrics', 'transformers', 'safetensors', 'kornia'],
+            ['pip', 'install', 'omegaconf', 'einops==0.4.1', 'pytorch-lightning==1.7.7', 'torchmetrics', 'transformers', 'safetensors', 'kornia'],
             ['git', 'clone', 'https://github.com/deforum-art/deforum-stable-diffusion'],
             ['pip', 'install', 'accelerate', 'ftfy', 'jsonmerge', 'matplotlib', 'resize-right', 'timm', 'torchdiffeq','scikit-learn','torchsde','open-clip-torch','numpngw'],
         ]

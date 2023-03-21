@@ -18,7 +18,7 @@ build:
     - "transformers==4.26.1"
     - "omegaconf==2.3.0"
     - "einops==0.4.1"
-    - "pytorch-lightning==2.0.0"
+    - "pytorch-lightning==1.7.7"
     - "torchmetrics==0.11.1"
     - "kornia==0.6"
     - "accelerate==0.16.0"
