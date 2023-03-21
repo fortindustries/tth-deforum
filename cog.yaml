@@ -10,7 +10,7 @@ build:
     - "pandas==1.4.4"
     - "scikit-image==0.19.3"
     - "clean_fid==0.1.35"
-    - "torch==1.12.1"
+    - "torch==2.0.0"
     - "torchvision==0.13.1"
     - "ftfy==6.1.1"
     - "scipy==1.10.0"
