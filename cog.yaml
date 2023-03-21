@@ -12,7 +12,7 @@ build:
     - "scikit-image==0.19.3"
     - "clean_fid==0.1.35"
     - "torch==2.0.0"
-    - "torchvision==0.13.1"
+    - "torchvision==0.15.1"
     - "ftfy==6.1.1"
     - "scipy==1.10.0"
     - "transformers==4.26.1"
