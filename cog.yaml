@@ -1,12 +1,12 @@
 build:
   gpu: true
+  cuda: "11.7.0"
   python_version: "3.10"
   system_packages:
     - "libgl1-mesa-glx"
     - "libglib2.0-0"
     - "ffmpeg"
   python_packages:
-    - "cuda==11.8.0"
     - "ipython==8.10.0"
     - "pandas==1.4.4"
     - "scikit-image==0.19.3"
