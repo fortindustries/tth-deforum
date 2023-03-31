@@ -32,4 +32,8 @@ EXPOSE 80
 ENV PYTHONUNBUFFERED 1
 
 # Run app.py when the container launches
-CMD ["python3.10", "app.py"]
+# CMD ["python3.10", "app.py"]
+
+COPY docker-entrypoint.py /usr/local/bin
+
+ENTRYPOINT [ "Deforum_Stable_Diffusion.py" ]
