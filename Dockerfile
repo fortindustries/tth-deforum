@@ -36,4 +36,4 @@ ENV PYTHONUNBUFFERED 1
 
 COPY Deforum_Stable_Diffusion.py /usr/local/bin
 
-ENTRYPOINT [ "Deforum_Stable_Diffusion.py" ]
+#ENTRYPOINT [ "Deforum_Stable_Diffusion.py" ]
