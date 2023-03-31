@@ -63,7 +63,7 @@ def install_requirements():
         "devtools",
         "validators",
         "numpngw",
-        "open-clip-torch==2.13.0"
+        "open-clip-torch==2.13.0",
         "torchsde",
         "ninja",
     ]
@@ -77,12 +77,7 @@ def install_requirements():
         "xformers==0.0.16rc424",
     ]
 
-    windows_xformers = [
-        "https://huggingface.co/deforum/xformers/blob/main/windows/xformers-0.0.15.dev0fd21b40.d20230107-cp310-cp310-win_amd64.whl",
-    ]
-
-    xformers = windows_xformers if os_system == 'Windows' else linux_xformers
-    pip_install_packages(xformers)
+    pip_install_packages(linux_xformers)
 
 
 if __name__ == "__main__":
