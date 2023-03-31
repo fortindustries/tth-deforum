@@ -23,9 +23,9 @@ def install_requirements():
 
     # Install pytorch
     torch = [
-        "torch",
-        "torchvision",
-        "torchaudio"
+        "torch==2.0.0",
+        "torchvision==0.15.1",
+        "torchaudio==2.0.1"
     ]
 
     extra_index_url = "https://download.pytorch.org/whl/cu117" if os_system == 'Windows' else None
@@ -50,7 +50,7 @@ def install_requirements():
         "omegaconf",
         "opencv-python",
         "pandas",
-        "pytorch_lightning==2.0.0",
+        "pytorch_lightning==1.7.7",
         "resize-right",
         "scikit-image",
         "scikit-learn",
@@ -63,7 +63,7 @@ def install_requirements():
         "devtools",
         "validators",
         "numpngw",
-        "open-clip-torch",
+        "open-clip-torch==2.13.0"
         "torchsde",
         "ninja",
     ]
