@@ -17,7 +17,7 @@ RUN apt-get install -y software-properties-common && \
     apt-get install -y python3.10 python3.10-distutils python3.10-dev
 
 # Install pip for Python 3.10
-RUN curl https://bootstrap.pypa.io/get-pip.py | python3.10
+RUN apt-get -y install python3-pip
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt /app/requirements.txt
