@@ -46,20 +46,12 @@ class Predictor(BasePredictor):
         self.device = "cuda"
         self.default_model = self.default_model.to(self.device)
 
+    @torch.inference_mode()
     def predict(
         self,
         model_checkpoint: str = Input(
             choices=[
-                "v2-1_768-ema-pruned.ckpt",
-                "v2-1_512-ema-pruned.ckpt",
-                "768-v-ema.ckpt",
-                "512-base-ema.ckpt",
                 "Protogen_V2.2.ckpt",
-                "v1-5-pruned.ckpt",
-                "v1-5-pruned-emaonly.ckpt",
-                "sd-v1-4.ckpt",
-                "robo-diffusion-v1.ckpt",
-                "wd-v1-3-float16.ckpt",
             ],
             description="Choose stable diffusion model.",
             default="Protogen_V2.2.ckpt",
