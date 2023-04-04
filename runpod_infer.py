@@ -475,8 +475,18 @@ def run(job):
         use_mask=validated_input["use_mask"],
         mask_file=validated_input["mask_file"],
         invert_mask=validated_input["invert_mask"],
-
-
+        invert_mask=validated_input["invert_mask"],
+        animation_mode=validated_input["animation_mode"],
+        border=validated_input["border"],
+        angle=validated_input["angle"],
+        zoom=validated_input["zoom"],
+        translation_x=validated_input["translation_x"],
+        translation_y=validated_input["translation_y"],
+        translation_z=validated_input["translation_z"],
+        rotation_3d_x=validated_input["rotation_3d_x"],
+        rotation_3d_y=validated_input["rotation_3d_y"],
+        rotation_3d_z=validated_input["rotation_3d_z"],
+        perspective_flip_theta=validated_input["perspective_flip_theta"],
     )
 
     job_output = []

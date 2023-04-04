@@ -33,7 +33,7 @@ build:
     - "matplotlib==3.6.3"
     - "omegaconf==2.3.0"
     - "numexpr==2.8.4"
-    - "runpod==0.9.0"
+    - "runpod==0.9.1"
 
   run:
     - pip install xformers
