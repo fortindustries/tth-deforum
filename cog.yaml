@@ -6,6 +6,8 @@ build:
     - "libgl1-mesa-glx"
     - "libglib2.0-0"
     - "ffmpeg"
+    - "pkg-config"
+    - "cmake"
   python_packages:
     - "ipython==8.10.0"
     - "pandas==1.4.4"
