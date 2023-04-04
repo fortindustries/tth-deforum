@@ -20,7 +20,7 @@ RUN apt-get install -y software-properties-common && \
 RUN apt-get -y install python3-pip
 
 # Copy the requirements.txt file into the container
-COPY requirements.txt /app/requirements.txt
+COPY old-requirements.txt /app/requirements.txt
 
 # Install any needed Python packages specified in requirements.txt
 RUN pip3 install -r requirements.txt
