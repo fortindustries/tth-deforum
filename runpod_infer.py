@@ -475,7 +475,6 @@ def run(job):
         use_mask=validated_input["use_mask"],
         mask_file=validated_input["mask_file"],
         invert_mask=validated_input["invert_mask"],
-        invert_mask=validated_input["invert_mask"],
         animation_mode=validated_input["animation_mode"],
         border=validated_input["border"],
         angle=validated_input["angle"],
