@@ -485,6 +485,7 @@ def run(job):
         rotation_3d_y=validated_input["rotation_3d_y"],
         rotation_3d_z=validated_input["rotation_3d_z"],
         perspective_flip_theta=validated_input["perspective_flip_theta"],
+        video_init_path=validated_input["video_init_path"],
     )
 
     job_output = []
