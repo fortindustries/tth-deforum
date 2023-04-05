@@ -458,7 +458,6 @@ def run(job):
         validated_input['seed'] = int.from_bytes(os.urandom(2), "big")
 
     output_video_path = MODEL.predict(
-        prompt=validated_input["prompt"],
         model_checkpoint=validated_input["model_checkpoint"],
         max_frames=validated_input["max_frames"],
         animation_prompts=validated_input["animation_prompts"],
