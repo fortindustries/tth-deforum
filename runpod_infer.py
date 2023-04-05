@@ -533,7 +533,7 @@ def run(job):
         resume_timestring=validated_input['resume_timestring']
     )
 
-    job_output = []
+    job_output = {}
 
     bucket_creds = {}
     bucket_creds['bucketName'] = 'canova-openjourney'
@@ -543,11 +543,9 @@ def run(job):
 
     output_video_uploaded_url = rp_upload.file(job['id'], output_video_path,bucket_creds)
 
-    job_output.append({
-        "video": output_video_uploaded_url,
-        "video_path": output_video_path,
-        "seed": job_input['seed']
-    })
+    job_output['video'] = output_video_uploaded_url
+    job_output['seed'] = job_input['seed']
+    job_output['refresh_worker'] = True
 
     # Remove downloaded input objects
     rp_cleanup.clean(['input_objects'])
