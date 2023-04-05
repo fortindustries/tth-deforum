@@ -1,6 +1,6 @@
 {
   "input": {
-    "animation_mode": "2D",,
+    "animation_mode": "2D",
     "model_checkpoint": "Protogen_V2.2.ckpt",
     "max_frames": 40,
     "fps": 10,
