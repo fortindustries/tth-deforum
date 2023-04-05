@@ -158,7 +158,7 @@ INPUT_SCHEMA = {
         'translation_x': {
         'type': str,
         'required': False,
-        'default': '0:(10sin(23.14*t/10))',
+        'default': '0:(10*sin(23.14*t/10))',
         'description': 'translation_x parameter for the 2D motion',
         },
         'translation_y': {
