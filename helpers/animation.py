@@ -302,17 +302,20 @@ class DeformAnimKeys():
 def get_inbetweens(key_frames, max_frames, integer=False, interp_method='Linear'):
     import numexpr
     key_frame_series = pd.Series([np.nan for a in range(max_frames)])
-    
+
+    print("max frames", max_frames)
     for i in range(0, max_frames):
         if i in key_frames:
             value = key_frames[i]
             value_is_number = check_is_number(value)
+            print("value", value)
             # if it's only a number, leave the rest for the default interpolation
             if value_is_number:
                 t = i
                 key_frame_series[i] = value
         if not value_is_number:
             t = i
+            print("value again", value)
             key_frame_series[i] = numexpr.evaluate(value)
     key_frame_series = key_frame_series.astype(float)
     
