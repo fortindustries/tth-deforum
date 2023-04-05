@@ -4,7 +4,7 @@ import os
 import predict
 from pathlib import Path
 import runpod
-from runpod.serverless.utils import rp_download, rp_upload, rp_cleanup
+from runpod.serverless.utils import rp_download, rp_upload, rp_cleanup, file
 from runpod.serverless.utils.rp_validator import validate
 
 
@@ -457,7 +457,7 @@ def run(job):
     if validated_input['seed'] is None:
         validated_input['seed'] = int.from_bytes(os.urandom(2), "big")
 
-    img_paths = MODEL.predict(
+    output_video_path = MODEL.predict(
         prompt=validated_input["prompt"],
         model_checkpoint=validated_input["model_checkpoint"],
         max_frames=validated_input["max_frames"],
@@ -490,13 +490,13 @@ def run(job):
 
     job_output = []
 
-    for index, img_path in enumerate(img_paths):
-        image_url = rp_upload.upload_image(job['id'], img_path, index)
+    output_video_uploaded_url = rp_upload.file(job['id'], output_video_path)
 
-        job_output.append({
-            "image": image_url,
-            "seed": job_input['seed'] + index
-        })
+    job_output.append({
+        "video": output_video_uploaded_url,
+        "video_path": output_video_path,
+        "seed": job_input['seed']
+    })
 
     # Remove downloaded input objects
     rp_cleanup.clean(['input_objects'])
