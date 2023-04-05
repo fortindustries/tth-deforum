@@ -52,7 +52,7 @@ def install_requirements():
         "pandas",
         "pytorch_lightning==1.7.7",
         "resize-right",
-        "scikit-image",
+        "scikit-image==0.20.0",
         "scikit-learn",
         "timm",
         "torchdiffeq",
