@@ -1,6 +1,6 @@
 build:
   gpu: true
-  cuda: "12.1.0"
+  cuda: "11.7.0"
   python_version: "3.11"
   system_packages:
     - "libgl1-mesa-glx"
