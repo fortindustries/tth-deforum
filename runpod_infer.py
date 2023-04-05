@@ -459,6 +459,7 @@ def run(job):
 
     output_video_path = MODEL.predict(
         model_checkpoint=validated_input["model_checkpoint"],
+        animation_mode=validated_input["animation_mode"],
         max_frames=validated_input["max_frames"],
         animation_prompts=validated_input["animation_prompts"],
         width=validated_input["width"],
