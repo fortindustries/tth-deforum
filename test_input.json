@@ -2,10 +2,10 @@
   "input": {
     "animation_mode": "2D",
     "model_checkpoint": "Protogen_V2.2.ckpt",
-    "max_frames": 40,
+    "max_frames": 20,
     "fps": 10,
-    "animation_prompts": "0: a giraffe, trending on Artstation | 20: a cat, trending on Artstation",
-    "width": 576,
-    "height": 768,
+    "animation_prompts": "0: a giraffe, trending on Artstation | 10: a cat, trending on Artstation",
+    "width": 256,
+    "height": 256
   }
 }
