@@ -11,7 +11,7 @@ build:
   python_packages:
     - "ipython==8.10.0"
     - "pandas==1.4.4"
-    - "scikit-image==0.20.0"
+    - "scikit-image==0.19.0"
     - "clean_fid==0.1.35"
     - "torch==2.0.0"
     - "torchvision==0.15.1"
