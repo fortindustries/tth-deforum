@@ -39,7 +39,7 @@ build:
     - "runpod==0.9.1"
 
   run:
-    - "pip install xformers==0.0.18"
+    - "pip install xformers==0.0.16"
     - pip install triton
 
 predict: "predict.py:Predictor"
