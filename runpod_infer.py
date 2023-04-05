@@ -488,6 +488,19 @@ def run(job):
         video_init_path=validated_input["video_init_path"],
         hybrid_video_composite=validated_input["hybrid_video_composite"],
         hybrid_video_motion=validated_input["hybrid_video_motion"],
+        hybrid_video_motion=validated_input['hybrid_video_motion'],
+        hybrid_video_flow_method=validated_input['hybrid_video_flow_method'],
+        hybrid_video_composite=validated_input['hybrid_video_composite'],
+        hybrid_video_comp_mask_type=validated_input['hybrid_video_comp_mask_type'],
+        hybrid_video_comp_mask_inverse=validated_input['hybrid_video_comp_mask_inverse'],
+        hybrid_video_comp_mask_equalize=validated_input['hybrid_video_comp_mask_equalize'],
+        hybrid_video_comp_mask_auto_contrast=validated_input['hybrid_video_comp_mask_auto_contrast'],
+        hybrid_video_comp_save_extra_frames=validated_input['hybrid_video_comp_save_extra_frames'],
+        hybrid_video_use_video_as_mse_image=validated_input['hybrid_video_use_video_as_mse_image'],
+        interpolate_key_frames=validated_input['interpolate_key_frames'],
+        interpolate_x_frames=validated_input['interpolate_x_frames'],
+        resume_from_timestring=validated_input['resume_from_timestring'],
+        resume_timestring=validated_input['resume_timestring']
     )
 
     job_output = []
