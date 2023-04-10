@@ -26,7 +26,7 @@ build:
     - "torchdiffeq==0.2.3"
     - "opencv-python==4.7.0.68"
     - "numpngw==0.1.2"
-    - "triton==2.0.0.dev20221202"
+    - "triton"
     - "open-clip-torch==2.13.0"
     - "torchsde==0.2.5"
     - "scikit-learn==1.2.1"

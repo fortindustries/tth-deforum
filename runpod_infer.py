@@ -536,7 +536,7 @@ def run(job):
     job_output = {}
 
     bucket_creds = {}
-    bucket_creds['bucketName'] = 'canova-openjourney'
+    bucket_creds['bucketName'] = os.environ.get('BUCKET_NAME', None)
     bucket_creds['endpointUrl'] = os.environ.get('BUCKET_ENDPOINT_URL', None)
     bucket_creds['accessId'] = os.environ.get('BUCKET_ACCESS_KEY_ID', None)
     bucket_creds['accessSecret'] = os.environ.get('BUCKET_SECRET_ACCESS_KEY', None)
