@@ -18,3 +18,5 @@ configs/
 models/
 
 .idea
+
+.code-workspace
