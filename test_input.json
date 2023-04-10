@@ -5,7 +5,7 @@
     "max_frames": 40,
     "fps": 10,
     "animation_prompts": "0: a giraffe, trending on Artstation | 10: a cat, trending on Artstation",
-    "width": 256,
-    "height": 256
+    "width": 448,
+    "height": 768
   }
 }
