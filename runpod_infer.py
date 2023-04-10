@@ -6,7 +6,7 @@ from pathlib import Path
 import runpod
 from runpod.serverless.utils import rp_download, rp_upload, rp_cleanup
 from runpod.serverless.utils.rp_validator import validate
-
+import subprocess
 
 MODEL = predict.Predictor()
 MODEL.setup()
@@ -541,7 +541,14 @@ def run(job):
     bucket_creds['accessId'] = os.environ.get('BUCKET_ACCESS_KEY_ID', None)
     bucket_creds['accessSecret'] = os.environ.get('BUCKET_SECRET_ACCESS_KEY', None)
 
-    output_video_uploaded_url = rp_upload.file(job['id'], output_video_path,bucket_creds)
+
+    output_video_cropped_path = "/tmp/" + job['id'] + "-cropped.mp4"
+    crop_video_center_ffmpeg(output_video_path, output_video_cropped_path)
+
+    output_video_uploaded_url = rp_upload.file(job['id'], output_video_cropped_path,bucket_creds)
+
+    
+
 
     job_output['video'] = output_video_uploaded_url
     job_output['seed'] = job_input['seed']
@@ -552,5 +559,34 @@ def run(job):
 
     return job_output
 
+
+def crop_video_center_ffmpeg(input_path, output_path):
+    original_width = 448
+    original_height = 768
+    new_width = 432
+    new_height = 768
+
+    # Calculate the crop values
+    crop_left = (original_width - new_width) // 2
+    crop_right = crop_left
+    crop_top = 0
+    crop_bottom = 0
+
+    # Build the FFmpeg command
+    cmd = [
+        "ffmpeg",
+        "-i", input_path,
+        "-filter:v", f"crop={new_width}:{new_height}:{crop_left}:{crop_top}",
+        "-c:v", "libx264",
+        "-preset", "slow",
+        "-crf", "22",
+        "-c:a", "aac",
+        "-b:a", "128k",
+        "-movflags", "+faststart",
+        output_path
+    ]
+
+    # Run the FFmpeg command
+    subprocess.run(cmd, check=True)
 
 runpod.serverless.start({"handler": run})
