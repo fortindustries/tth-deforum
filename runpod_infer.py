@@ -109,7 +109,7 @@ INPUT_SCHEMA = {
         'description': "If not using init image, you can skip the next settings to setting the animation_mode.",
         },
         'init_image': {
-        'type': Path,
+        'type': str,
         'required': False,
         'default': None,
         'description': 'Provide init_image if use_init',
@@ -456,6 +456,10 @@ def run(job):
 
     if validated_input['seed'] is None:
         validated_input['seed'] = int.from_bytes(os.urandom(2), "big")
+
+    if validated_input['init_image'] != None:
+        validated_input['use_init'] = True
+        validated_input['init_image'] = Path(validated_input['init_image'])
 
     output_video_path = MODEL.predict(
         model_checkpoint=validated_input["model_checkpoint"],
