@@ -34,5 +34,6 @@ build:
     - "omegaconf==2.3.0"
     - "numexpr==2.8.4"
     - "runpod==0.9.1"
+    - "safetensors"
 
 predict: "predict.py:Predictor"
