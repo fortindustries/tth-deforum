@@ -15,7 +15,6 @@ INPUT_SCHEMA = {
     'model_checkpoint': {
         'type': str,
         'required': True,
-        'choices': ['Protogen_V2.2.ckpt'],
         'description': 'Choose stable diffusion model.',
         'default': 'Protogen_V2.2.ckpt',
     },
