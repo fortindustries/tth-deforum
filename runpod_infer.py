@@ -16,7 +16,7 @@ INPUT_SCHEMA = {
         'type': str,
         'required': True,
         'description': 'Choose stable diffusion model.',
-        'default': 'Protogen_V2.2.ckpt',
+        'default': 'deliberate-v2.ckpt',
     },
     'max_frames': {
         'type': int,

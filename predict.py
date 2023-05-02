@@ -35,7 +35,7 @@ class Predictor(BasePredictor):
     def setup(self):
         """Load the model into memory to make running multiple predictions efficient"""
         # Load the default model in setup()
-        self.default_ckpt = "Protogen_V2.2.ckpt"
+        self.default_ckpt = "deliberate-v2.ckpt"
         default_model_ckpt_config_path = "configs/v1-inference.yaml"
         default_model_ckpt_path = os.path.join(MODEL_CACHE, self.default_ckpt)
         local_config = OmegaConf.load(default_model_ckpt_config_path)
@@ -50,11 +50,8 @@ class Predictor(BasePredictor):
     def predict(
         self,
         model_checkpoint: str = Input(
-            choices=[
-                "Protogen_V2.2.ckpt",
-            ],
             description="Choose stable diffusion model.",
-            default="Protogen_V2.2.ckpt",
+            default="deliberate-v2.ckpt",
         ),
         max_frames: int = Input(
             description="Number of frames for animation", default=200
