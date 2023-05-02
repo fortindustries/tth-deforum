@@ -14,11 +14,6 @@ os.makedirs(MODEL_CACHE, exist_ok=True)
 
 
 MODEL_MAP = {
-    "Protogen_V2.2.ckpt": {
-        "sha256": "bb725eaf2ed90092e68b892a1d6262f538131a7ec6a736e50ae534be6b5bd7b1",
-        "url": "https://huggingface.co/darkstorm2150/Protogen_v2.2_Official_Release/resolve/main/Protogen_V2.2.ckpt",
-        "requires_login": False,
-    },
     "deliberate-v2.safetensors": {
         "sha256": "9ABA26ABDF",
         "url": "https://civitai.com/api/download/models/15236",
