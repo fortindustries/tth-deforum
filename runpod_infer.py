@@ -591,6 +591,7 @@ def crop_video_center_ffmpeg(input_path, output_path):
 
     # Run the FFmpeg command
     result = subprocess.run(cmd, stderr=subprocess.PIPE, text=True, check=True)
+    print(result.stderr)
     if result.returncode != 0:
         print("Error encountered:")
         print(result.stderr)
