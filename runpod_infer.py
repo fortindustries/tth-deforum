@@ -591,6 +591,9 @@ def crop_video_center_ffmpeg(input_path, output_path):
     ]
 
     # Run the FFmpeg command
-    subprocess.run(cmd, check=True)
+    result = subprocess.run(cmd, stderr=subprocess.PIPE, text=True, check=True)
+    if result.returncode != 0:
+        print("Error encountered:")
+        print(result.stderr)
 
 runpod.serverless.start({"handler": run})
