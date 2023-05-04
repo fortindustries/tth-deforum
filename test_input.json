@@ -4,8 +4,9 @@
     "model_checkpoint": "deliberate-v2.ckpt",
     "max_frames": 40,
     "fps": 10,
-    "animation_prompts": "0: a giraffe, trending on Artstation | 10: a cat, trending on Artstation",
+    "animation_prompts": "0: a banana, trending on Artstation | 10: a cat, trending on Artstation",
     "width": 448,
-    "height": 768
+    "height": 768,
+    "uncond_prompts": "0: yellow | 10: red, eyes"
   }
 }
