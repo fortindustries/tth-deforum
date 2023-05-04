@@ -231,6 +231,8 @@ class Predictor(BasePredictor):
         interpolate_key_frames: bool = Input(default=False),
         interpolate_x_frames: int = Input(default=4),
         resume_from_timestring: bool = Input(default=False),
+        enable_schedule_samplers: bool = Input(default=False),
+        sampler_schedule: str = Input(default="0: (0)"),
         resume_timestring: str = Input(default=""),
     ) -> Path:
         """Run a single prediction on the model"""
@@ -451,6 +453,8 @@ class Predictor(BasePredictor):
             "interpolate_x_frames": interpolate_x_frames,
             "resume_from_timestring": resume_from_timestring,
             "resume_timestring": resume_timestring,
+            "enable_schedule_samplers" = enable_schedule_samplers
+            "sampler_schedule" = sampler_schedule
         }
 
         args = SimpleNamespace(**args_dict)
