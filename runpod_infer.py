@@ -235,27 +235,27 @@ INPUT_SCHEMA = {
         'required': False,
         'default': '0: (1.0)',
     },
-    'hybrid_video_comp_alpha_schedule': {
+    'hybrid_comp_alpha_schedule': {
         'type': str,
         'required': False,
         'default': '0:(1)',
     },
-    'hybrid_video_comp_mask_blend_alpha_schedule': {
+    'hybrid_comp_mask_blend_alpha_schedule': {
         'type': str,
         'required': False,
         'default': '0:(0.5)',
     },
-    'hybrid_video_comp_mask_contrast_schedule': {
+    'hybrid_comp_mask_contrast_schedule': {
         'type': str,
         'required': False,
         'default': '0:(1)',
     },
-    'hybrid_video_comp_mask_auto_contrast_cutoff_high_schedule': {
+    'hybrid_comp_mask_auto_contrast_cutoff_high_schedule': {
         'type': str,
         'required': False,
         'default': '0:(100)',
     },
-    'hybrid_video_comp_mask_auto_contrast_cutoff_low_schedule': {
+    'hybrid_comp_mask_auto_contrast_cutoff_low_schedule': {
         'type': str,
         'required': False,
         'default': '0:(0)',
@@ -359,61 +359,61 @@ INPUT_SCHEMA = {
     'required': False,
     'default': None,
 },
-'hybrid_video_generate_inputframes': {
+'hybrid_generate_inputframes': {
     'type': bool,
     'required': False,
     'default': False,
 },
-'hybrid_video_use_first_frame_as_init_image': {
+'hybrid_use_first_frame_as_init_image': {
     'type': bool,
     'required': False,
     'default': True,
 },
-'hybrid_video_motion': {
+'hybrid_motion': {
     'type': str,
     'required': False,
     'choices': ['None', 'Optical Flow', 'Perspective', 'Affine'],
     'default': 'None',
 },
-'hybrid_video_flow_method': {
+'hybrid_flow_method': {
     'type': str,
     'required': False,
     'choices': ['Farneback', 'DenseRLOF', 'SF'],
     'default': 'Farneback',
 },
-'hybrid_video_composite': {
+'hybrid_composite': {
     'type': bool,
     'required': False,
     'default': False,
 },
-'hybrid_video_comp_mask_type': {
+'hybrid_comp_mask_type': {
     'type': str,
     'required': False,
     'choices': ['None', 'Depth', 'Video Depth', 'Blend', 'Difference'],
     'default': 'None',
 },
-'hybrid_video_comp_mask_inverse': {
+'hybrid_comp_mask_inverse': {
     'type': bool,
     'required': False,
     'default': False,
 },
-'hybrid_video_comp_mask_equalize': {
+'hybrid_comp_mask_equalize': {
     'type': str,
     'required': False,
     'choices': ['None', 'Before', 'After', 'Both'],
     'default': 'None',
 },
-'hybrid_video_comp_mask_auto_contrast': {
+'hybrid_comp_mask_auto_contrast': {
     'type': bool,
     'required': False,
     'default': False,
 },
-'hybrid_video_comp_save_extra_frames': {
+'hybrid_comp_save_extra_frames': {
     'type': bool,
     'required': False,
     'default': False,
 },
-'hybrid_video_use_video_as_mse_image': {
+'hybrid_use_video_as_mse_image': {
     'type': bool,
     'required': False,
     'default': False,
@@ -501,11 +501,11 @@ def run(job):
         noise_schedule=validated_input['noise_schedule'],
         strength_schedule=validated_input['strength_schedule'],
         contrast_schedule=validated_input['contrast_schedule'],
-        hybrid_video_comp_alpha_schedule=validated_input['hybrid_video_comp_alpha_schedule'],
-        hybrid_video_comp_mask_blend_alpha_schedule=validated_input['hybrid_video_comp_mask_blend_alpha_schedule'],
-        hybrid_video_comp_mask_contrast_schedule=validated_input['hybrid_video_comp_mask_contrast_schedule'],
-        hybrid_video_comp_mask_auto_contrast_cutoff_high_schedule=validated_input['hybrid_video_comp_mask_auto_contrast_cutoff_high_schedule'],
-        hybrid_video_comp_mask_auto_contrast_cutoff_low_schedule=validated_input['hybrid_video_comp_mask_auto_contrast_cutoff_low_schedule'],
+        hybrid_comp_alpha_schedule=validated_input['hybrid_comp_alpha_schedule'],
+        hybrid_comp_mask_blend_alpha_schedule=validated_input['hybrid_comp_mask_blend_alpha_schedule'],
+        hybrid_comp_mask_contrast_schedule=validated_input['hybrid_comp_mask_contrast_schedule'],
+        hybrid_comp_mask_auto_contrast_cutoff_high_schedule=validated_input['hybrid_comp_mask_auto_contrast_cutoff_high_schedule'],
+        hybrid_comp_mask_auto_contrast_cutoff_low_schedule=validated_input['hybrid_comp_mask_auto_contrast_cutoff_low_schedule'],
         kernel_schedule=validated_input['kernel_schedule'],
         sigma_schedule=validated_input['sigma_schedule'],
         amount_schedule=validated_input['amount_schedule'],
@@ -525,17 +525,17 @@ def run(job):
         overwrite_extracted_frames=validated_input['overwrite_extracted_frames'],
         use_mask_video=validated_input['use_mask_video'],
         video_mask_path=validated_input['video_mask_path'],
-        hybrid_video_generate_inputframes=validated_input['hybrid_video_generate_inputframes'],
-        hybrid_video_use_first_frame_as_init_image=validated_input['hybrid_video_use_first_frame_as_init_image'],
-        hybrid_video_motion=validated_input['hybrid_video_motion'],
-        hybrid_video_flow_method=validated_input['hybrid_video_flow_method'],
-        hybrid_video_composite=validated_input['hybrid_video_composite'],
-        hybrid_video_comp_mask_type=validated_input['hybrid_video_comp_mask_type'],
-        hybrid_video_comp_mask_inverse=validated_input['hybrid_video_comp_mask_inverse'],
-        hybrid_video_comp_mask_equalize=validated_input['hybrid_video_comp_mask_equalize'],
-        hybrid_video_comp_mask_auto_contrast=validated_input['hybrid_video_comp_mask_auto_contrast'],
-        hybrid_video_comp_save_extra_frames=validated_input['hybrid_video_comp_save_extra_frames'],
-        hybrid_video_use_video_as_mse_image=validated_input['hybrid_video_use_video_as_mse_image'],
+        hybrid_generate_inputframes=validated_input['hybrid_generate_inputframes'],
+        hybrid_use_first_frame_as_init_image=validated_input['hybrid_use_first_frame_as_init_image'],
+        hybrid_motion=validated_input['hybrid_motion'],
+        hybrid_flow_method=validated_input['hybrid_flow_method'],
+        hybrid_composite=validated_input['hybrid_composite'],
+        hybrid_comp_mask_type=validated_input['hybrid_comp_mask_type'],
+        hybrid_comp_mask_inverse=validated_input['hybrid_comp_mask_inverse'],
+        hybrid_comp_mask_equalize=validated_input['hybrid_comp_mask_equalize'],
+        hybrid_comp_mask_auto_contrast=validated_input['hybrid_comp_mask_auto_contrast'],
+        hybrid_comp_save_extra_frames=validated_input['hybrid_comp_save_extra_frames'],
+        hybrid_use_video_as_mse_image=validated_input['hybrid_use_video_as_mse_image'],
         interpolate_key_frames=validated_input['interpolate_key_frames'],
         interpolate_x_frames=validated_input['interpolate_x_frames'],
         resume_from_timestring=validated_input['resume_from_timestring'],

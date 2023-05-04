@@ -190,7 +190,6 @@ def unsharp_mask(img, kernel_size=(5, 5), sigma=1.0, amount=1.0, threshold=0):
 
 def render_animation(root, anim_args, args, cond_prompts, uncond_prompts):
     # handle hybrid video generation
-    print(anim_args)
     if anim_args.animation_mode in ['2D','3D']:
         if anim_args.hybrid_composite or anim_args.hybrid_motion in ['Affine', 'Perspective', 'Optical Flow']:
             args, anim_args, inputfiles = hybrid_generation(args, anim_args, root)
@@ -399,7 +398,7 @@ def render_animation(root, anim_args, args, cond_prompts, uncond_prompts):
                         matrix = get_matrix_for_hybrid_motion_prev(frame_idx, (args.W, args.H), inputfiles, prev_img, anim_args.hybrid_motion)
                     else:
                         matrix = get_matrix_for_hybrid_motion(frame_idx-1, (args.W, args.H), inputfiles, anim_args.hybrid_motion)
-                    prev_img = image_transform_ransac(prev_img, matrix, anim_args.hybrid_motion, cv2.BORDER_WRAP if anim_args.border == 'wrap' else cv2.BORDER_REPLICATE)    
+                    prev_img = image_transform_ransac(prev_img, matrix, anim_args.hybrid_motion, cv2.BORDER_WRAP if anim_args.border == 'wrap' else cv2.BORDER_REPLICATE)
                 if anim_args.hybrid_motion in ['Optical Flow']:
                     if anim_args.hybrid_motion_use_prev_img:
                         flow = get_flow_for_hybrid_motion_prev(frame_idx-1, (args.W, args.H), inputfiles, hybrid_frame_path, prev_img, anim_args.hybrid_flow_method, anim_args.hybrid_comp_save_extra_frames)
