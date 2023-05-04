@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+from tqdm import tqdm
+import requests
+
+
+MODEL_CACHE = "diffusion_models_cache"
+if os.path.exists(MODEL_CACHE):
+    shutil.rmtree(MODEL_CACHE)
+os.makedirs(MODEL_CACHE, exist_ok=True)
+
+
+MODEL_MAP = {
+    "deliberate-v2.ckpt": {
+        "sha256": "9ABA26ABDF",
+        "url": "https://civitai.com/api/download/models/15236",
+        "requires_login": False,
+    },
+}
+
+
+def download_model(model_ckpt):
+    url = MODEL_MAP[model_ckpt]["url"]
+    if MODEL_MAP[model_ckpt]["requires_login"]:
+        username = sys.argv[1]
+        token = sys.argv[2]
+        _, path = url.split("https://")
+        url = f"https://{username}:{token}@{path}"
+
+    # contact server for model
+    print(f"..attempting to download {model_ckpt}...this may take a while")
+    ckpt_request = requests.get(url, stream=True)
+    request_status = ckpt_request.status_code
+
+    # inform user of errors
+    if request_status == 403:
+        raise ConnectionRefusedError(
+            "You have not accepted the license for this model."
+        )
+    elif request_status == 404:
+        raise ConnectionError("Could not make contact with server")
+    elif request_status != 200:
+        raise ConnectionError(
+            f"Some other error has ocurred - response code: {request_status}"
+        )
+
+    # write to model path
+    with open(os.path.join(MODEL_CACHE, model_ckpt), "wb") as model_file:
+        file_size = int(ckpt_request.headers.get("Content-Length"))
+        with tqdm(total=file_size, unit="B", unit_scale=True, desc=model_ckpt) as pbar:
+            for chunk in ckpt_request.iter_content(chunk_size=1024):
+                if chunk:  # filter out keep-alive new chunks
+                    model_file.write(chunk)
+                    pbar.update(len(chunk))
+
+
+# download checkpoints
+for model_ckpt in MODEL_MAP:
+    download_model(model_ckpt)
