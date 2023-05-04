@@ -453,8 +453,8 @@ class Predictor(BasePredictor):
             "interpolate_x_frames": interpolate_x_frames,
             "resume_from_timestring": resume_from_timestring,
             "resume_timestring": resume_timestring,
-            "enable_schedule_samplers" = enable_schedule_samplers
-            "sampler_schedule" = sampler_schedule
+            "enable_schedule_samplers": enable_schedule_samplers,
+            "sampler_schedule": sampler_schedule
         }
 
         args = SimpleNamespace(**args_dict)
