@@ -60,6 +60,11 @@ class Predictor(BasePredictor):
             default="0: a beautiful apple, trending on Artstation | 50: a beautiful banana, trending on Artstation | 100: a beautiful coconut, trending on Artstation | 150: a beautiful durian, trending on Artstation",
             description="Prompt for animation. Provide 'frame number : prompt at this frame', separate different prompts with '|'. Make sure the frame number does not exceed the max_frames.",
         ),
+
+        uncond_prompts: str = Input(
+            default="",
+            description="Negative prompts",
+        ),
         width: int = Input(
             description="Width of output video. Reduce if out of memory.",
             choices=[128, 256, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024],
@@ -257,6 +262,29 @@ class Predictor(BasePredictor):
                 assert len(prompt) > 0, "prompt cannot be empty"
                 animation_prompts_dict[int(frame_id)] = prompt
             animation_prompts = OrderedDict(sorted(animation_prompts_dict.items()))
+
+
+            uncond_prompts_dict = {}
+        uncond_prompts = uncond_prompts.split("|")
+        assert len(uncond_prompts) > 0, "Please provide valid prompt for animation."
+        if len(uncond_prompts) == 1:
+            uncond_prompts = {0: uncond_prompts[0]}
+        else:
+            for frame_prompt in uncond_prompts:
+                frame_prompt = frame_prompt.split(":")
+                assert (
+                    len(frame_prompt) == 2
+                ), "Please follow the 'frame_num: prompt' format."
+                frame_id, prompt = frame_prompt[0].strip(), frame_prompt[1].strip()
+                assert (
+                    frame_id.isdigit() and 0 <= int(frame_id) <= max_frames
+                ), "frame_num should be an integer and 0<= frame_num <= max_frames"
+                assert (
+                    int(frame_id) not in uncond_prompts_dict
+                ), f"Duplicate prompts for frame_num {frame_id}. "
+                assert len(prompt) > 0, "prompt cannot be empty"
+                uncond_prompts_dict[int(frame_id)] = prompt
+            uncond_prompts = OrderedDict(sorted(uncond_prompts_dict.items()))
 
         root = {"device": "cuda", "models_path": "models", "configs_path": "configs"}
         if model_checkpoint == self.default_ckpt:
@@ -469,11 +497,11 @@ class Predictor(BasePredictor):
 
         # dispatch to appropriate renderer
         if anim_args.animation_mode == "2D" or anim_args.animation_mode == "3D":
-            render_animation(args, anim_args, animation_prompts, root)
+            render_animation(root, anim_args, args, animation_prompts, uncond_prompts)
         elif anim_args.animation_mode == "Video Input":
-            render_input_video(args, anim_args, animation_prompts, root)
+            render_input_video(root, anim_args, args, animation_prompts, uncond_prompts)
         elif anim_args.animation_mode == "Interpolation":
-            render_interpolation(args, anim_args, animation_prompts, root)
+            render_interpolation(root, anim_args, args, animation_prompts, uncond_prompts)
 
         # make video
         image_path = os.path.join(args.outdir, f"{args.timestring}_%05d.png")

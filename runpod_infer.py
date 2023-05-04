@@ -24,6 +24,11 @@ INPUT_SCHEMA = {
         'description': 'Number of frames for animation',
         'default': 200,
     },
+    'uncond_prompts': {
+        'type': str,
+        'required': False,
+        'default': '',
+    },
     'animation_prompts': {
         'type': str,
         'required': False,
@@ -464,6 +469,7 @@ def run(job):
         model_checkpoint=validated_input["model_checkpoint"],
         max_frames=validated_input['max_frames'],
         animation_prompts=validated_input['animation_prompts'],
+        uncond_prompts=validated_input['uncond_prompts'],
         width=validated_input['width'],
         height=validated_input['height'],
         num_inference_steps=validated_input['num_inference_steps'],
