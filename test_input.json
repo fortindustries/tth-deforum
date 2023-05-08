@@ -1,8 +1,7 @@
 {
   "input": {
     "width": 448,
-    "height": 448,
-    "bit_depth_output": 8,
+    "height": 768,
     "num_inference_steps": 20,
     "fps": 10,
     "model_checkpoint": "deliberate-v2.safetensors",
@@ -18,8 +17,6 @@
     "translation_x": "0:(0)",
     "translation_y": "0:(0)",
     "translation_z": "0:(1.75)",
-    "transform_center_x": "0:(1)",
-    "transform_center_y": "0:(1)",
     "rotation_3d_x": "0:(0)",
     "rotation_3d_y": "0:(0)",
     "rotation_3d_z": "0:(0)",
