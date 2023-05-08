@@ -313,7 +313,7 @@ class Predictor(BasePredictor):
             "grid_rows": 2,
             "outdir": "cog_temp_output",
             "use_init": use_init,
-            "strength": 0.1,
+            "strength": 0.8,
             "strength_0_no_init": True,
             "init_image": init_image,
             "use_mask": use_mask,
