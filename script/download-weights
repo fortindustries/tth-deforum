@@ -14,7 +14,7 @@ os.makedirs(MODEL_CACHE, exist_ok=True)
 
 
 MODEL_MAP = {
-    "deliberate-v2.ckpt": {
+    "deliberate-v2.safetensors": {
         "sha256": "9ABA26ABDF",
         "url": "https://civitai.com/api/download/models/15236",
         "requires_login": False,
