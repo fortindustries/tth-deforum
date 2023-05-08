@@ -1,8 +1,8 @@
 {
   "input": {
     "width": 448,
-    "height": 768,
-    "num_inference_steps": 20,
+    "height": 448,
+    "num_inference_steps": 25,
     "fps": 10,
     "model_checkpoint": "deliberate-v2.safetensors",
     "seed": 65,
