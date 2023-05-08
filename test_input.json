@@ -10,7 +10,7 @@
     "zoom": "0:(1.03)",
     "noise_schedule": "0:(0.065)",
     "max_frames": 20,
-    "animation_prompts": "(tiny cute swamp bunny:1), highly detailed, intricate, ultra hd, sharp photo, crepuscular rays, in focus, by tomasz alen kopera, (green:-1)",
+    "animation_prompts": "(tiny cute swamp bunny:1), highly detailed, intricate, ultra hd, sharp photo, crepuscular rays, in focus, by tomasz alen kopera, (grass:-1) (green:-1)",
     "animation_mode": "2D",
     "border": "replicate",
     "angle": "0:(0)",
