@@ -240,7 +240,7 @@ class Predictor(BasePredictor):
         animation_prompts = animation_prompts.split("|")
         assert len(animation_prompts) > 0, "Please provide valid prompt for animation."
         if len(animation_prompts) == 1:
-            animation_prompts = {0: animation_prompts[0]}
+            animation_prompts = {0: animation_prompts[0] + " (nude:-1) (nsfw:-1) "}
         else:
             for frame_prompt in animation_prompts:
                 frame_prompt = frame_prompt.split(":")
