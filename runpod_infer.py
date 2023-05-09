@@ -545,13 +545,7 @@ def run(job):
     bucket_creds['accessSecret'] = os.environ.get('BUCKET_SECRET_ACCESS_KEY', None)
 
 
-    output_video_cropped_path = "/tmp/" + job['id'] + "-cropped.mp4"
-
-
     output_video_uploaded_url = rp_upload.file(job['id'], output_video_path,bucket_creds)
-
-    crop_video_center_ffmpeg(output_video_path, output_video_cropped_path)
-    output_video_uploaded_url = rp_upload.file(job['id'], output_video_cropped_path,bucket_creds)
 
     job_output['video'] = output_video_uploaded_url
     job_output['seed'] = job_input['seed']

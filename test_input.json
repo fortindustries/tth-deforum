@@ -6,20 +6,20 @@
     "fps": 10,
     "model_checkpoint": "deliberate-v2.safetensors",
     "seed": 65,
-    "perspective_flip_phi": "0:(0)",
     "zoom": "0:(1.03)",
-    "noise_schedule": "0:(0.065)",
     "max_frames": 20,
     "animation_prompts": "(tiny cute swamp bunny:1), highly detailed, intricate, ultra hd, sharp photo, crepuscular rays, in focus, by tomasz alen kopera, (grass:-1) (green:-1)",
     "animation_mode": "2D",
+    "perspective_flip_phi": "0:(0)",
+    "noise_schedule": "0:(0.065)",
     "border": "replicate",
     "angle": "0:(0)",
     "translation_x": "0:(0)",
     "translation_y": "0:(0)",
+    "overwrite_extracted_frames": false,
     "translation_z": "0:(1.75)",
     "rotation_3d_x": "0:(0)",
     "rotation_3d_y": "0:(0)",
-    "rotation_3d_z": "0:(0)",
-    "overwrite_extracted_frames": false
+    "rotation_3d_z": "0:(0)"
   }
 }
