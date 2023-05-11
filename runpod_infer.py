@@ -439,6 +439,20 @@ INPUT_SCHEMA = {
         'required': False,
         'default': '',
     },
+
+
+    'enable_schedule_samplers': {
+        'type': bool,
+        'required': False,
+        'default': False,
+    },
+
+
+    'sampler_schedule:': {
+        'type': str,
+        'required': False,
+        'default': '0: (0)',
+    },
     }
 
 
@@ -539,7 +553,9 @@ def run(job):
         interpolate_key_frames=validated_input['interpolate_key_frames'],
         interpolate_x_frames=validated_input['interpolate_x_frames'],
         resume_from_timestring=validated_input['resume_from_timestring'],
-        resume_timestring=validated_input['resume_timestring']
+        resume_timestring=validated_input['resume_timestring'],
+        sampler_schedule=validated_input['resume_timestring'],
+        enable_schedule_samplers=validated_input['enable_schedule_samplers']
     )
 
     job_output = {}
