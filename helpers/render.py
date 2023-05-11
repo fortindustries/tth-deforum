@@ -189,6 +189,8 @@ def unsharp_mask(img, kernel_size=(5, 5), sigma=1.0, amount=1.0, threshold=0):
 
 
 def render_animation(root, anim_args, args, cond_prompts, uncond_prompts):
+    print("render anim_args", anim_args)
+    print("render args", args)
     # handle hybrid video generation
     if anim_args.animation_mode in ['2D','3D']:
         if anim_args.hybrid_composite or anim_args.hybrid_motion in ['Affine', 'Perspective', 'Optical Flow']:
