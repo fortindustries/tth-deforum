@@ -14,7 +14,7 @@ MODEL.setup()
 INPUT_SCHEMA = {
     'model_checkpoint': {
         'type': str,
-        'required': True,
+        'required': False,
         'description': 'Choose stable diffusion model.',
         'default': 'deliberate-v2.safetensors',
     },
