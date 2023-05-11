@@ -554,7 +554,7 @@ def run(job):
         interpolate_x_frames=validated_input['interpolate_x_frames'],
         resume_from_timestring=validated_input['resume_from_timestring'],
         resume_timestring=validated_input['resume_timestring'],
-        sampler_schedule=validated_input['resume_timestring'],
+        sampler_schedule=validated_input['sampler_schedule'],
         enable_schedule_samplers=validated_input['enable_schedule_samplers']
     )
 
