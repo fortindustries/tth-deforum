@@ -9,8 +9,9 @@
 		"zoom":"0:(0.97)",
 		"seed":759793612,
 		"uncond_prompts":"easynegative, NG_DeepNegative_V1_2T, ( <lora:bad-hands-5:1>, disfigured), (bad art), (deformed), (poorly drawn), (extra limbs), strange colours, blurry, boring, lacklustre, repetitive, cropped, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, jpeg artifacts, signature, watermark, username, blurry,bad anatomy , liquid body, malformed, mutated, bad proportions, uncoordinated body, unnatural body, disfigured, ugly, gross proportions ,mutation, disfigured, deformed,fused fingers,too many fingers, gross proportions,malformed limbs,missing arms,missing legs",
-		"rotation_3d_y":"0:(1.2)",
+		"rotation_3d_y":"0:(0)",
 		"animation_mode":"3D",
-		"padding_mode":"reflection"
+		"padding_mode":"reflection",
+		"sampler_schedule": "0: (0)",
 	}
 }

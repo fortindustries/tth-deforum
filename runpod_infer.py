@@ -451,7 +451,7 @@ INPUT_SCHEMA = {
     'sampler_schedule:': {
         'type': str,
         'required': False,
-        'default': '0: (0)',
+        'default': "0: (0)",
     },
     }
 
