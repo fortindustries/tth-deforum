@@ -448,7 +448,7 @@ INPUT_SCHEMA = {
 },
 
 
-'sampler_schedule:': {
+'sampler_schedule': {
 'type': str,
 'required': False,
 'default': "0: (0)",
