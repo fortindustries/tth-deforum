@@ -12,6 +12,6 @@
 		"rotation_3d_y":"0:(0)",
 		"animation_mode":"3D",
 		"padding_mode":"reflection",
-		"sampler_schedule": "0: (0)",
+		"sampler_schedule": "0: (0)"
 	}
 }
