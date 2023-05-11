@@ -1,12 +1,16 @@
 {
-  "input": {
-    "animation_mode": "2D",
-    "model_checkpoint": "deliberate-v2.safetensors",
-    "max_frames": 40,
-    "fps": 10,
-    "animation_prompts": "0: a banana, trending on Artstation | 10: a cat, trending on Artstation",
-    "width": 448,
-    "height": 768,
-    "uncond_prompts": "0: yellow | 10: red, eyes"
-  }
+	"input": {
+		"animation_prompts":"a giraffe playing basketball, highly detailed, intricate, ultra hd, sharp photo, in focus, by tomasz alen kopera",
+		"fps":10,
+		"max_frames":20,
+		"num_inference_steps":25,
+		"translation_z":"0:(15 * cos((120 / 60 * 3.141 * t / 10)))",
+		"translation_x":"0:(0)",
+		"zoom":"0:(0.97)",
+		"seed":759793612,
+		"uncond_prompts":"easynegative, NG_DeepNegative_V1_2T, ( <lora:bad-hands-5:1>, disfigured), (bad art), (deformed), (poorly drawn), (extra limbs), strange colours, blurry, boring, lacklustre, repetitive, cropped, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, jpeg artifacts, signature, watermark, username, blurry,bad anatomy , liquid body, malformed, mutated, bad proportions, uncoordinated body, unnatural body, disfigured, ugly, gross proportions ,mutation, disfigured, deformed,fused fingers,too many fingers, gross proportions,malformed limbs,missing arms,missing legs",
+		"rotation_3d_y":"0:(1.2)",
+		"animation_mode":"3D",
+		"padding_mode":"reflection"
+	}
 }
