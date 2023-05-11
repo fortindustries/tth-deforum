@@ -16,7 +16,7 @@ INPUT_SCHEMA = {
         'type': str,
         'required': True,
         'description': 'Choose stable diffusion model.',
-        'default': 'deliberate-v2.safetensors',
+        'default': 'dreamshaper-v5.safetensors',
     },
     'max_frames': {
         'type': int,
