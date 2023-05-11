@@ -425,6 +425,7 @@ class Predictor(BasePredictor):
             "color_coherence": color_coherence,
             "color_coherence_video_every_N_frames": color_coherence_video_every_N_frames,
             "diffusion_cadence": diffusion_cadence,
+            "color_force_grayscale": False,
             "use_depth_warping": use_depth_warping,
             "midas_weight": midas_weight,
             "near_plane": near_plane,
