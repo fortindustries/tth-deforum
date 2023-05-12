@@ -351,6 +351,7 @@ class Predictor(BasePredictor):
             "strength": 0.1,
             "strength_0_no_init": True,
             "init_image": str(init_image),
+            "add_init_noise": add_init_noise,
             "use_mask": use_mask,
             "use_alpha_as_mask": False,
             "mask_file": str(mask_file),
