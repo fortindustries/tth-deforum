@@ -118,6 +118,11 @@ INPUT_SCHEMA = {
 'default': None,
 'description': 'Provide init_image if use_init',
 },
+'strength': {
+'type': float,
+'required': False,
+'default': 0.1,
+},
 'use_mask': {
 'type': bool,
 'required': False,
@@ -493,6 +498,7 @@ def run(job):
         fps=validated_input['fps'],
         clip_name=validated_input['clip_name'],
         use_init=validated_input['use_init'],
+        strength=validated_input['strength'],
         init_image=validated_input['init_image'],
         use_mask=validated_input['use_mask'],
         mask_file=validated_input['mask_file'],
