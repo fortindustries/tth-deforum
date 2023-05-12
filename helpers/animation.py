@@ -274,7 +274,7 @@ def transform_image_3d(device, prev_img_cv2, depth_tensor, rot_mat, translate, a
 
 class DeformAnimKeys():
     def __init__(self, anim_args):
-        print("anim_args", anim_args)
+        # print("anim_args", anim_args)
         self.angle_series = get_inbetweens(parse_key_frames(anim_args.angle), anim_args.max_frames)
         self.zoom_series = get_inbetweens(parse_key_frames(anim_args.zoom), anim_args.max_frames)
         self.translation_x_series = get_inbetweens(parse_key_frames(anim_args.translation_x), anim_args.max_frames)
