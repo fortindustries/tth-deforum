@@ -487,7 +487,6 @@ def run(job):
 
     if validated_input['init_image'] != None:
         validated_input['use_init'] = True
-        validated_input['init_image'] = Path(validated_input['init_image'])
 
     output_video_path = MODEL.predict(
         model_checkpoint=validated_input["model_checkpoint"],
