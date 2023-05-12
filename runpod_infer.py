@@ -445,6 +445,11 @@ INPUT_SCHEMA = {
 'default': '',
 },
 
+'add_init_noise': {
+'type': bool,
+'required': False,
+'default': False,
+},
 
 'enable_schedule_samplers': {
 'type': bool,
@@ -562,6 +567,7 @@ def run(job):
         enable_schedule_samplers=validated_input['enable_schedule_samplers'],
         sampler_schedule=validated_input['sampler_schedule'],
         resume_timestring=validated_input['resume_timestring'],
+        add_init_noise=validated_input['add_init_noise'],
     )
 
     job_output = {}
