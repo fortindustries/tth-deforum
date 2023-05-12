@@ -78,6 +78,10 @@ class Predictor(BasePredictor):
         num_inference_steps: int = Input(
             description="Number of denoising steps", ge=1, le=500, default=50
         ),
+        strength: float = Input(
+            description="Strength",
+            default=0.9
+        ),
         guidance_scale: float = Input(
             description="Scale for classifier-free guidance", ge=1, le=20, default=7
         ),
@@ -348,7 +352,7 @@ class Predictor(BasePredictor):
             "grid_rows": 2,
             "outdir": "cog_temp_output",
             "use_init": use_init,
-            "strength": 0.1,
+            "strength": strength,
             "strength_0_no_init": True,
             "init_image": str(init_image),
             "add_init_noise": add_init_noise,
