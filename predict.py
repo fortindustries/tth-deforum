@@ -113,6 +113,11 @@ class Predictor(BasePredictor):
             default=False,
             description="If not using init image, you can skip the next settings to setting the animation_mode.",
         ),
+
+        add_init_noise: bool = Input(
+            default=False,
+            description="Add init noise",
+        ),
         init_image: Path = Input(
             default=None, description="Provide init_image if use_init"
         ),
