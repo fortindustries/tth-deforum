@@ -19,6 +19,11 @@ MODEL_MAP = {
         "url": "https://civitai.com/api/download/models/15236",
         "requires_login": False,
     },
+    "dreamshaper-v5.safetensors": {
+        "sha256": "A60CFAA90D",
+        "url": "https://civitai.com/api/download/models/43888",
+        "requires_login": False,
+    },
 }
 
 
