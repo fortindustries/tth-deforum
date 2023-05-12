@@ -13,6 +13,7 @@
 		"animation_mode":"3D",
 		"padding_mode":"reflection",
 		"init_image": "https://i.imgur.com/pVrJH7e.jpeg",
-		"strength": 0.9
+		"strength": 0.9,
+		"use_init": true
 	}
 }
